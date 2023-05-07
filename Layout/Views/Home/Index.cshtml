@@ -1,0 +1,22 @@
+﻿@*@model Student*@
+@*@model List<Student>*@
+@model HomeVM
+
+<h1>Home Index</h1>
+@foreach(Student student in Model.Students)
+{
+    <ul>
+        <li>
+            <a asp-controller="Home" asp-action="Detail" asp-route-id="@student.Id">@student.Name</a>
+        </li>
+    </ul>
+
+    @*<h2>@student.Name @student.Surname @student.Age</h2>*@
+}
+
+@foreach (Group group in Model.Groups)
+{
+        <h2>@group.No @group.Count</h2>
+}
+
+@*<h2>@ViewBag.name @ViewData["age"] @TempData["experience"]</h2>*@
